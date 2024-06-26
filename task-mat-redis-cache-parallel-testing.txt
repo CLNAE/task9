@@ -1,0 +1,12 @@
+In order to use Redis-based caching, we need to install Redis.
+
+sudo apt install redis
+pip install redis
+
+After removing the LRU cache mechanism from the script and replacing it with a Redis-based one, the results
+I have obtained are the following:
+
+On the first run, the runtime was 112.5 minutes. After running the same script, with the same mat.in files,
+the runtime dropped to 66 minutes. I ran the tests on 110 files, each containing 110.000 lines. It seems that
+the LRU cache was doing a better job, since the runtime for the script was 44 minutes when it was implemented.
+
